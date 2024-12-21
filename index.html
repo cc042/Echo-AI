@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>Code Comet Echo</title>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FavIcons -->
+    <link rel="icon" href="assets/Echo.png">
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <figure>
+            <img src="assets/Echo.png" alt="Code Comet AI" height="45">
+            <figcaption>Code Comet Echo</figcaption>
+        </figure>
+        <button style="line-height: 10px;">
+            <img src="assets/three dots.svg" alt=":">
+        </button>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Welcomes -->
+        <span class="Hello">Hi, How can I help you?</span>
+        <span class="Hello">You can ask me anything...</span>
+
+        <!-- Messages -->
+        <section class="Messages"></section>
+
+        <!-- Form -->
+        <form>
+            <textarea name="Query" placeholder="Type your question..." maxlength="218"></textarea>
+            <button class="Microphone"><img src="assets/Microphone.svg" alt="Microphone" id="Microphone"></button>
+            <button class="Send"><img src="assets/send.svg" alt="Send"></button>
+        </form>
+    </main>
+</body>
+
+</html>
