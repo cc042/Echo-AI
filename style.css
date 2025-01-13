@@ -16,13 +16,127 @@ img {
     background-color: #21263A;
 }
 
+@keyframes spin1 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    75% {
+        transform: rotateZ(180deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(180deg);
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    75% {
+        transform: rotateZ(360deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/* loader */
+.Load {
+    overflow: hidden;
+    margin: auto;
+    position: fixed;
+    z-index: 9999;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
+    position: relative;
+}
+
+.quater {
+    height: 1.5cm;
+    width: 1.5cm;
+    background-color: skyblue;
+    float: left;
+    position: relative;
+    bottom: 1.25cm;
+}
+
+.i {
+    border-top-left-radius: 100%;
+    animation: spin1 2s ease-in-out infinite;
+    transform-origin: 1.5cm 1.5cm;
+}
+
+.ii {
+    border-top-right-radius: 100%;
+    animation: spin2 2s ease-in-out infinite;
+    transform-origin: 0 1.5cm;
+}
+
 /* body Section */
 body {
     background-color: #0A0E18;
     font-family: lato;
-    height: 100vh;
-    width: 100vw;
+    height: 10dvh;
+    width: 100dvw;
     overflow-y: hidden;
+}
+
+/* ANY DIALOG WHEN IT OPENS */
+dialog {
+    background: none;
+    margin: auto;
+    /* Add display */
+    transition: opacity 0.7s ease-in, display 0.7s ease-in;
+
+    /* Add transition-behavior */
+    transition-behavior: allow-discrete;
+
+    /* Style when open */
+    opacity: 1;
+}
+
+/* The style when closed */
+@starting-style {
+    dialog {
+        opacity: 0;
+    }
+}
+
+/* The style when closed */
+dialog:not([open]) {
+    opacity: 0;
+}
+
+/* ANY BACKDROP DIALOG */
+dialog::backdrop {
+    backdrop-filter: blur(10px);
 }
 
 /* Header Section */
@@ -60,12 +174,38 @@ header button {
 /* main section */
 main {
     position: absolute;
-    bottom: 26px;
+    bottom: 0px;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+/* suggestions */
+.suggestions {
+    width: 808px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 15px 0px;
+}
+
+.suggestion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #21263A;
+    padding: 10px;
+    border-radius: 10px;
+    background: #141822;
+    color: lightgray;
+    font-family: Lato;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    height: 100%;
 }
 
 /* form Section */
@@ -75,8 +215,15 @@ form {
     height: 120px;
     display: flex;
     align-items: center;
-    margin-top: 25px;
     justify-content: center;
+}
+
+.nor {
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
 }
 
 textarea {
@@ -124,7 +271,7 @@ span {
 
 span:nth-child(2) {
     font-size: 14px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
     margin-top: 6px;
     font-weight: 400;
     opacity: 50%;
@@ -140,6 +287,7 @@ span:nth-child(2) {
     overflow-y: auto;
     overflow-x: hidden;
     justify-content: flex-start;
+    margin-bottom: 25px;
 }
 
 .Messages::-webkit-scrollbar {
@@ -155,6 +303,7 @@ span:nth-child(2) {
     flex-direction: row-reverse;
     gap: 12px;
     margin-bottom: 10px;
+    max-width: 400px;
 }
 
 #user {
@@ -202,7 +351,7 @@ span:nth-child(2) {
 
 
 @media screen and (max-width:810px) {
-    main {bottom: 10px;}
+
     body,
     .Messages {
         overflow-y: hidden;
@@ -211,11 +360,19 @@ span:nth-child(2) {
     form,
     section,
     .Messages,
-    .Hello {
+    .Hello,
+    .suggestions {
         width: 95.3vw;
     }
 
     #aiText {
         max-width: 70vw;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .suggestions {
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
     }
 }

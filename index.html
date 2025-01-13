@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- FavIcons -->
-    <link rel="icon" href="assets/Echo.png">
+    <link rel="icon" href="assets\Next Gen Software.jpg">
 
     <!-- JS -->
     <script src="script.js" defer></script>
@@ -28,11 +28,19 @@
 </head>
 
 <body>
+    <!-- Loader -->
+    <dialog class="Load" open>
+        <div class="loader">
+            <div class="quater i"></div>
+            <div class="quater ii"></div>
+        </div>
+    </dialog>
+
     <!-- Header -->
     <header>
         <figure>
-            <img src="assets/Echo.png" alt="Code Comet AI" height="45">
-            <figcaption>Code Comet Echo</figcaption>
+            <img src="assets\Next Gen Software.jpg" alt="Code Comet AI" height="45">
+            <figcaption>NextGen Echo</figcaption>
         </figure>
         <button style="line-height: 10px;">
             <img src="assets/three dots.svg" alt=":">
@@ -45,6 +53,12 @@
         <span class="Hello">Hi, How can I help you?</span>
         <span class="Hello">You can ask me anything...</span>
 
+        <div class="suggestions">
+            <button class="suggestion">What is Python?</button>
+            <button class="suggestion">What is the C++?</button>
+            <button class="suggestion">Tell Me A lie?</button>
+        </div>
+
         <!-- Messages -->
         <section class="Messages"></section>
 
@@ -54,6 +68,7 @@
             <button class="Microphone"><img src="assets/Microphone.svg" alt="Microphone" id="Microphone"></button>
             <button class="Send"><img src="assets/send.svg" alt="Send"></button>
         </form>
+        <p class="nor">Number Of Requests</p>
     </main>
 </body>
 
